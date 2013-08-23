@@ -1,4 +1,5 @@
 Playmysong::Application.routes.draw do
+  devise_for :users
   resources :songs
 
   root 'songs#index'

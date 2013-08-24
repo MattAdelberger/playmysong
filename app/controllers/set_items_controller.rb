@@ -1,5 +1,5 @@
 class SetItemsController < ApplicationController
-  # before_action :set_set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_set_item, only: [:update]
 
   # GET /set_items
   # GET /set_items.json
@@ -26,6 +26,7 @@ class SetItemsController < ApplicationController
   def create
     @set_item = SetItem.new(set_item_params)
 
+    @set_item.votes = 0
     respond_to do |format|
       if @set_item.save
         format.html { redirect_to event_path(params[:event_id]) }
@@ -39,17 +40,20 @@ class SetItemsController < ApplicationController
 
   # PATCH/PUT /set_items/1
   # PATCH/PUT /set_items/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @set_item.update(set_item_params)
-  #       format.html { redirect_to @set_item, notice: 'Set item was successfully updated.' }
-  #       format.json { head :no_content }
-  #     else
-  #       format.html { render action: 'edit' }
-  #       format.json { render json: @set_item.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def update
+    @set_item.votes = @set_item.votes + 1
+    @set_item.save
+    redirect_to live_event_path(@set_item.event.code)
+    # respond_to do |format|
+    #   if @set_item.update(set_item_params)
+    #     format.html { redirect_to @set_item, notice: 'Set item was successfully updated.' }
+    #     format.json { head :no_content }
+    #   else
+    #     format.html { render action: 'edit' }
+    #     format.json { render json: @set_item.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end
 
   # DELETE /set_items/1
   # DELETE /set_items/1.json
@@ -64,9 +68,9 @@ class SetItemsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_set_item
-    #   @set_item = SetItem.find(params[:id])
-    # end
+    def set_set_item
+      @set_item = SetItem.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def set_item_params

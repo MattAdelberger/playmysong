@@ -1,1 +1,9 @@
 <h1><%= @event.venue %></h1>
+
+<% @set_items.each do |set_song| %>
+  <ul>
+    <li>
+      <%= button_to "#{set_song.song.title} by #{set_song.song.artist} - votes: #{set_song.votes}", set_item_path(set_song), method: :patch %>
+    </li>
+  </ul>
+<% end %>

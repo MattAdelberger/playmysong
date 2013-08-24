@@ -99,6 +99,11 @@ h2 {
 	margin-bottom: 20px;
 }
 
+h3 {
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
 p {
 	font-size: 1.6em;
 }
@@ -253,7 +258,7 @@ td {
 	border-radius: 3px;
 	padding: 3em;
 	border: 1px solid #313C53;
-	
+
 }
 
 .new-song .field {

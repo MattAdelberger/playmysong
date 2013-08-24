@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Event at <%= @event.venue %> on <%= @event.date.strftime('%A %b %e, %Y') %></h2>
+
 <p>
-  <strong>Code:</strong>
+  <strong>Event Code:</strong>
   <%= @event.code %>
 </p>
 
+<h3>All Songs</h3>
 <table>
   <thead>
     <tr>
@@ -17,9 +20,37 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
-        <td><%= check_box_tag 'accept' %></td>
+        <td>
+          <%= form_tag set_items_path do %>
+            <%= hidden_field_tag :event_id, @event.id %>
+            <%= hidden_field_tag :song_id, song.id %>
+            <%= button_tag 'Add Song' %>
+          <% end %>
+        </td>
         <td><%= song.title %></td>
         <td><%= song.artist %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Setlist</h3>
+
+<table>
+  <thead>
+    <tr>
+     <th width="10%"></th>
+      <th width="45%%">Title</th>
+      <th width="45%%">Artist</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @set_items.each do |set_song| %>
+      <tr>
+        <td><%= link_to 'Remove Song', set_item_path(set_song), method: :delete %></td>
+        <td><%= set_song.song.title %></td>
+        <td><%= set_song.song.artist %></td>
       </tr>
     <% end %>
   </tbody>

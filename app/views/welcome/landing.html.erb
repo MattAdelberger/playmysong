@@ -1,9 +1,11 @@
-<section class="enter-code">
+<section class="enter-code group">
 <%= form_tag order_lookup_path, :class => 'group' do %>
 <legend>Enter Event Code</legend>
   <%= text_field_tag :event_code %>
-  <%= submit_tag 'Go Vote!' %>
+  <%= submit_tag 'Request Songs' %>
 <% end %>
 
-<%= link_to "Log In", new_user_session_path %>
+<ul>
+<li><%= link_to "Log In", new_user_session_path %> <a href="/users/sign_up">Sign Up</a></li>
+</ul>
 </section>

@@ -5,7 +5,9 @@
  * 	04. Utility Classes
  * 	05. Tables
  * 	06. Sections
- * 	07. Footer
+ * 	07. Forms Elements
+ * 	08. Modal Window
+ * 	09. Footer
  ************************************/
 
 
@@ -93,12 +95,18 @@ h1 {
 	margin-bottom: 20px;
 }
 
+h2 {
+	font-size: 3.6em;
+	margin-bottom: 20px;
+}
+
 p {
 	font-size: 1.6em;
 }
 
 a {
 	text-decoration: none;
+	cursor: pointer;
 	font-size: 1.6em;
 	color: rgba(0, 0, 0, 0.5);
 }
@@ -220,6 +228,59 @@ td {
 
 section {
 	padding: 4em 0;
+}
+
+
+
+
+
+/* ------------------------------------------
+ * Form Elements
+ * ------------------------------------------ */
+
+input {
+	padding: 1em;
+}
+
+
+
+
+
+/* ------------------------------------------
+ * Modal Window
+ * ------------------------------------------ */
+
+.body-locked {
+    overflow: hidden;
+}
+
+.modal-container {
+    display: none;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0; right: 0;
+    height: 100%; 
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal {
+    max-width: 800px;
+    width: 95%;
+    margin: 50px auto;
+    padding: 4em;
+    background: #fff;
+    border: 1px solid #B6C0D2;
+}
+
+/*helper styles*/
+
+.dp-none {
+    display: none !important;
+}
+
+.dp-block {
+    display: block !important;
 }
 
 

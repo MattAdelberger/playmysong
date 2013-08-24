@@ -4,6 +4,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :title
       t.string :artist
       t.integer :votes
+      t.references :user, index: true
 
       t.timestamps
     end

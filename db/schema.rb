@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823233831) do
+ActiveRecord::Schema.define(version: 20130823234051) do
 
   create_table "songs", force: true do |t|
     t.string   "title"
     t.string   "artist"
     t.integer  "votes"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "songs", ["user_id"], name: "index_songs_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 20130823233831) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "artist"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

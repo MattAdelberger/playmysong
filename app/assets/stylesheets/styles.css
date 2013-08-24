@@ -2,6 +2,8 @@
  * 	01. CSS Reset
  * 	02. Base Styles
  * 	03. Utility Classes
+ * 	04. Tables
+ * 	04. Sections
  ************************************/
 
 
@@ -75,6 +77,7 @@ strong em, em strong {
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 62.5%;
+	background:rgba(182, 192, 210, 0.2);
 }
 
 h1 {
@@ -83,10 +86,6 @@ h1 {
 }
 
 p {
-	font-size: 1.6em;
-}
-
-table {
 	font-size: 1.6em;
 }
 
@@ -100,6 +99,10 @@ a:hover {
 	color: rgba(0, 0, 0, 0.75);
 }
 
+ul {
+	font-size: 1.6em;
+}
+
 
 
 
@@ -109,21 +112,35 @@ a:hover {
  * ------------------------------------------ */
 
 header {
-	border-bottom: 1px solid #ddd;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	background: #313C53;
+	border-bottom: 1px solid #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+	letter-spacing: 1px;
 }
 
 header .logo a {
-	color: #444;
+	color: #9CFF00;
 	float:left;
 	font-size: 2.4em;
 	padding: 1em 1em 1em 0;
 	text-transform: UPPERCASE;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
 }
 
 header ul {
 	float: right;
 	padding-top: 0.8em;
+	font-size: 1em;
+}
+
+header ul a {
+ 	color: #fff;
+ 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+ 	font-size: 1.8em;
+}
+
+header ul a:hover {
+	color: #B6C0D2;
 }
 
 header li {
@@ -151,6 +168,55 @@ header li:last-child {
 
 
 
+
+
+/* ------------------------------------------
+ * Tables
+ * ------------------------------------------ */
+
+table {
+	width: 100%;
+	font-size: 1.6em;
+	margin: 20px 0;
+}
+
+table a {
+	font-size: 1em;
+	margin-right: 1em;
+}
+
+table a:last-child {
+	margin-right: 0;
+}
+
+th {
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+	padding: 1em 1em 0.5em 1em;
+}
+
+td {
+    padding: 1em;
+}
+
+table tr:nth-child(even) {
+	background: #f2f2f2;
+}
+
+
+
+/* ------------------------------------------
+ * Sections
+ * ------------------------------------------ */
+
+section {
+	border-radius: 10px;
+	border: 3px solid #313C53;
+	margin: 4em 0;
+	background: #fff;
+	padding: 4em;
+	box-shadow: 0 0 10px rgba(49, 60, 83, 0.5);
+}
 
 
 

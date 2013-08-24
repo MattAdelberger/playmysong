@@ -1,14 +1,15 @@
-<h1>Listing songs</h1>
+<section class="songs">
+<h1>Song Library</h1>
+
+
+<%= link_to 'Add New Song', new_song_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>Votes</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th width="40%%">Title</th>
+      <th width="40%%">Artist</th>
+      <th width="20%%">Options</th>
     </tr>
   </thead>
 
@@ -17,10 +18,8 @@
       <tr>
         <td><%= song.title %></td>
         <td><%= song.artist %></td>
-        <td><%= song.votes %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_song_path(song) %>
+        <%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,5 @@
 
 <br>
 
-<%= link_to 'New Song', new_song_path %>
+
+</section>

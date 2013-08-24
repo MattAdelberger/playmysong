@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @songs = Song.where(user_id: current_user.id)
   end
 
   # GET /events/1/edit

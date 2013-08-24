@@ -5,5 +5,25 @@
   <%= @event.code %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+     <th width="10%"></th>
+      <th width="45%%">Title</th>
+      <th width="45%%">Artist</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= check_box_tag 'accept' %></td>
+        <td><%= song.title %></td>
+        <td><%= song.artist %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

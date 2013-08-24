@@ -12,31 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :code %><br>
-    <%= f.text_field :code %>
+    <%= f.label :venue %><br>
+    <%= f.text_field :venue %>
   </div>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_field :date %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-
-<table>
-  <thead>
-    <tr>
-     <th width="10%"></th>
-      <th width="45%%">Title</th>
-      <th width="45%%">Artist</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-      	<td><%= check_box_tag 'accept' %></td>
-        <td><%= song.title %></td>
-        <td><%= song.artist %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

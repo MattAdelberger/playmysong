@@ -2,13 +2,13 @@
 
 <h1>Events</h1>
 
-<%= link_to 'New Event', new_event_path %>
+<%= render 'form' %>
 <table>
   <thead>
     <tr>
-      <th>Code</th>
-      <th></th>
-      <th></th>
+      <th>Venue</th>
+      <th>Date</th>
+      <th>Event Code</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +16,8 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= event.venue %></td>
+        <td><%= event.date %></td>
         <td><%= event.code %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>

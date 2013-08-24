@@ -6,17 +6,18 @@ class EventsController < ApplicationController
   def index
     @title = "Events"
     @events = Event.all
+    @event = Event.new
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @songs = Song.where(user_id: current_user.id)
   end
 
   # GET /events/new
   def new
     @event = Event.new
-    @songs = Song.where(user_id: current_user.id)
   end
 
   # GET /events/1/edit
@@ -71,6 +72,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:code)
+      params.require(:event).permit(:venue, :date)
     end
 end

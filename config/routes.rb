@@ -1,4 +1,6 @@
 Playmysong::Application.routes.draw do
+  get '/welcome' => 'welcome#landing'
+  post '/welcome' => 'welcome#event_lookup', :as => 'order_lookup'
   resources :set_items
 
   resources :events
@@ -8,7 +10,7 @@ Playmysong::Application.routes.draw do
 
   root 'events#index'
 
-  get ':code' => 'events#live_event'
+  get ':code' => 'events#live_event', :as => 'live_event'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

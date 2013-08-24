@@ -3,11 +3,10 @@
  * 	02. Base Styles
  * 	03. Header
  * 	04. Utility Classes
- * 	05. Tables
- * 	06. Sections
- * 	07. Forms Elements
- * 	08. Modal Window
- * 	09. Footer
+ * 	05. Form Elements
+ * 	06. Tables
+ * 	07. Sections
+ * 	08. Footer
  ************************************/
 
 
@@ -96,7 +95,7 @@ h1 {
 }
 
 h2 {
-	font-size: 3.6em;
+	font-size: 2.8em;
 	margin-bottom: 20px;
 }
 
@@ -191,6 +190,24 @@ header li:last-child {
 
 
 /* ------------------------------------------
+ * Form Elements
+ * ------------------------------------------ */
+
+input {
+	font-size: 1.6em;
+}
+
+input[type="submit"] {
+	padding: 0.5em 1em;
+	background: none;
+	border: 1px solid #000;
+	cursor: pointer;
+}
+
+
+
+
+/* ------------------------------------------
  * Tables
  * ------------------------------------------ */
 
@@ -226,63 +243,40 @@ td {
  * Sections
  * ------------------------------------------ */
 
-section {
+.events,
+.songs {
 	padding: 4em 0;
 }
 
-
-
-
-
-/* ------------------------------------------
- * Form Elements
- * ------------------------------------------ */
-
-input {
-	padding: 1em;
+.new-song {
+	background: #B6C0D2;
+	border-radius: 3px;
+	padding: 3em;
+	border: 1px solid #313C53;
+	
 }
 
-
-
-
-
-/* ------------------------------------------
- * Modal Window
- * ------------------------------------------ */
-
-.body-locked {
-    overflow: hidden;
+.new-song .field {
+	float:left;
+	width: 40%;
 }
 
-.modal-container {
-    display: none;
-    overflow-y: scroll;
-    position: fixed;
-    top: 0; right: 0;
-    height: 100%; 
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+.new-song input[type="text"] {
+	display: block;
+	padding: 0.4em;
+	width: 95%;
+	font-size: 1.8em;
 }
 
-.modal {
-    max-width: 800px;
-    width: 95%;
-    margin: 50px auto;
-    padding: 4em;
-    background: #fff;
-    border: 1px solid #B6C0D2;
+.new-song .actions {
+	float:right;
+	width: 20%;
 }
 
-/*helper styles*/
-
-.dp-none {
-    display: none !important;
+.new-song input[type="submit"] {
+	margin-top: 0.2em;
+	float:right;
 }
-
-.dp-block {
-    display: block !important;
-}
-
 
 
 

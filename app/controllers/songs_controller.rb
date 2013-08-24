@@ -7,6 +7,7 @@ class SongsController < ApplicationController
   def index
     @title = "Song Library"
     @songs = Song.where(user_id: current_user.id)
+    @song = Song.new
   end
 
   # GET /songs/1

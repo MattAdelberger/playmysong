@@ -1,0 +1,33 @@
+<%= form_for(@set_item) do |f| %>
+  <% if @set_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@set_item.errors.count, "error") %> prohibited this set_item from being saved:</h2>
+
+      <ul>
+      <% @set_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :song %><br>
+    <%= f.text_field :song %>
+  </div>
+  <div class="field">
+    <%= f.label :event %><br>
+    <%= f.text_field :event %>
+  </div>
+  <div class="field">
+    <%= f.label :votes %><br>
+    <%= f.number_field :votes %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  song_id: 
+  event_id: 
+  votes: 1
+  active: false
+
+two:
+  song_id: 
+  event_id: 
+  votes: 1
+  active: false

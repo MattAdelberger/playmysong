@@ -1,4 +1,8 @@
 Playmysong::Application.routes.draw do
+  resources :set_items
+
+  resources :events
+
   devise_for :users
   resources :songs
 

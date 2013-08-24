@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @set_item.song %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @set_item.event %>
+</p>
+
+<p>
+  <strong>Votes:</strong>
+  <%= @set_item.votes %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @set_item.active %>
+</p>
+
+<%= link_to 'Edit', edit_set_item_path(@set_item) %> |
+<%= link_to 'Back', set_items_path %>

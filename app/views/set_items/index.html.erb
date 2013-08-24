@@ -1,0 +1,33 @@
+<h1>Listing set_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Event</th>
+      <th>Votes</th>
+      <th>Active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @set_items.each do |set_item| %>
+      <tr>
+        <td><%= set_item.song %></td>
+        <td><%= set_item.event %></td>
+        <td><%= set_item.votes %></td>
+        <td><%= set_item.active %></td>
+        <td><%= link_to 'Show', set_item %></td>
+        <td><%= link_to 'Edit', edit_set_item_path(set_item) %></td>
+        <td><%= link_to 'Destroy', set_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Set item', new_set_item_path %>

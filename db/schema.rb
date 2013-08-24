@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823234051) do
+ActiveRecord::Schema.define(version: 20130824014326) do
+
+  create_table "events", force: true do |t|
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "venue"
+    t.date     "date"
+  end
+
+  create_table "set_items", force: true do |t|
+    t.integer  "song_id"
+    t.integer  "event_id"
+    t.integer  "votes"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "set_items", ["event_id"], name: "index_set_items_on_event_id"
+  add_index "set_items", ["song_id"], name: "index_set_items_on_song_id"
 
   create_table "songs", force: true do |t|
     t.string   "title"

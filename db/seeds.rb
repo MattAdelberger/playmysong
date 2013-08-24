@@ -19,16 +19,16 @@ end
 
 
 songs = [
-  {title: 'Hey you Jack', artist: 'Jack', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Jill', artist: 'Jill', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Matt', artist: 'Matt', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Kelvin', artist: 'Kelvin', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Noah', artist: 'Noah', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Eilah', artist: 'Eilah', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Blake', artist: 'Blake', votes: 0, user_id: User.first.id},
-  {title: 'Hey you Kate', artist: 'Kate', votes: 0, user_id: User.last.id},
-  {title: 'Hey you John', artist: 'John', votes: 0, user_id: User.last.id},
-  {title: 'Hey you Bob Smith', artist: 'Bob Smith', votes: 0, user_id: User.last.id}
+  {title: 'Hey you Jack', artist: 'Jack', user_id: User.first.id},
+  {title: 'Hey you Jill', artist: 'Jill', user_id: User.first.id},
+  {title: 'Hey you Matt', artist: 'Matt', user_id: User.first.id},
+  {title: 'Hey you Kelvin', artist: 'Kelvin', user_id: User.first.id},
+  {title: 'Hey you Noah', artist: 'Noah', user_id: User.first.id},
+  {title: 'Hey you Eilah', artist: 'Eilah', user_id: User.first.id},
+  {title: 'Hey you Blake', artist: 'Blake', user_id: User.first.id},
+  {title: 'Hey you Kate', artist: 'Kate', user_id: User.last.id},
+  {title: 'Hey you John', artist: 'John', user_id: User.last.id},
+  {title: 'Hey you Bob Smith', artist: 'Bob Smith', user_id: User.last.id}
 ]
 
 Song.delete_all

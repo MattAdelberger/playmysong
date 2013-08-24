@@ -99,6 +99,10 @@ h2 {
 	margin-bottom: 20px;
 }
 
+.event h2 {
+	margin-top: 2em;
+}
+
 h3 {
 	font-size: 2em;
 	margin-bottom: 20px;
@@ -202,7 +206,9 @@ input {
 	font-size: 1.6em;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button,
+.set-list a {
 	color: #fff;
 	cursor: pointer;
 	padding: 0.5em 1em;
@@ -294,6 +300,10 @@ table a {
 	margin-right: 1em;
 }
 
+.set-list table a {
+	font-size: 0.7em;
+}
+
 table a:last-child {
 	margin-right: 0;
 }
@@ -316,11 +326,11 @@ td {
  * ------------------------------------------ */
 
 .events,
+.event,
 .songs {
 	padding: 4em 0;
 }
 
-<<<<<<< HEAD
 .new-song {
 	background: #B6C0D2;
 	border-radius: 3px;
@@ -351,6 +361,18 @@ td {
 	float:right;
 }
 
+.song-list,
+.set-list {
+	width: 50%;
+	float:left;
+}
+
+.event li  {
+	padding: 1em 0;
+}
+.event strong {
+	margin-right: 1em;
+}
 
 
 

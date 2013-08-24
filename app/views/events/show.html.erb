@@ -1,19 +1,21 @@
+<section class="event group">
+
 <p id="notice"><%= notice %></p>
 
-<h2>Event at <%= @event.venue %> on <%= @event.date.strftime('%A %b %e, %Y') %></h2>
+<h1><%= @event.venue %></h1>
+<ul>
+	<li><strong>Event Date:</strong> <%= @event.date %></li>
+	<li><strong>Event Code:</strong> <%= @event.code %></li>
+</ul>
 
-<p>
-  <strong>Event Code:</strong>
-  <%= @event.code %>
-</p>
-
-<h3>All Songs</h3>
-<table>
+<section class="song-list">
+	<h2>Song List</h2>
+	<table>
   <thead>
     <tr>
-     <th width="10%"></th>
-      <th width="45%%">Title</th>
-      <th width="45%%">Artist</th>
+     <th width="20%"></th>
+      <th width="40%">Title</th>
+      <th width="40%">Artist</th>
     </tr>
   </thead>
 
@@ -33,22 +35,23 @@
     <% end %>
   </tbody>
 </table>
+</section>
 
-<h3>Setlist</h3>
-
-<table>
+<section class="set-list">
+	<h2>Set List</h2>
+	<table>
   <thead>
     <tr>
-     <th width="10%"></th>
-      <th width="45%%">Title</th>
-      <th width="45%%">Artist</th>
+      <th width="20%"></th>
+      <th width="40%">Title</th>
+      <th width="40%">Artist</th>
     </tr>
   </thead>
 
   <tbody>
     <% @set_items.each do |set_song| %>
       <tr>
-        <td><%= link_to 'Remove Song', set_item_path(set_song), method: :delete %></td>
+      	<td><%= link_to 'Remove', set_item_path(set_song), method: :delete %></td>
         <td><%= set_song.song.title %></td>
         <td><%= set_song.song.artist %></td>
       </tr>
@@ -56,5 +59,13 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+</section>
+
+
+
+
+
+
+
+
+</section>

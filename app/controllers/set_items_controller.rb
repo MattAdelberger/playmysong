@@ -1,4 +1,5 @@
 class SetItemsController < ApplicationController
+  skip_before_action :authenticate_user!, :only => :update
   before_action :set_set_item, only: [:update, :play_song]
 
   # GET /set_items

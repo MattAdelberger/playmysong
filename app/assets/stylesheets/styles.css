@@ -1,6 +1,7 @@
 /*************************************
  * 	01. CSS Reset
  * 	02. Base Styles
+ * 	03. Utility Classes
  ************************************/
 
 
@@ -127,6 +128,20 @@ header ul {
 header li {
 	display: inline-block;
 	padding: 2em;
+}
+
+
+
+
+
+/* ------------------------------------------
+ * Utility Classes
+ * ------------------------------------------ */
+
+.inner {
+	max-width: 1140px;
+	width: 95%;
+	margin: 0 auto;
 }
 
 

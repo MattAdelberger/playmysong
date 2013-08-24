@@ -1,4 +1,6 @@
 Playmysong::Application.routes.draw do
+  resources :audience_members
+
   get '/welcome' => 'welcome#landing'
   post '/welcome' => 'welcome#event_lookup', :as => 'order_lookup'
   get '/events/:id/live_admin' => 'events#live_event_admin', :as => 'live_event_admin'

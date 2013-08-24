@@ -8,7 +8,7 @@ Playmysong::Application.routes.draw do
   devise_for :users
   resources :songs
 
-  root 'events#index'
+  root 'welcome#landing'
 
   get ':code' => 'events#live_event', :as => 'live_event'
 

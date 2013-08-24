@@ -203,7 +203,9 @@ header li:last-child {
  * ------------------------------------------ */
 
 input {
-	font-size: 1.6em;
+	font-size: 1.8em;
+		display: block;
+	padding: 0.4em;
 }
 
 input[type="submit"],
@@ -211,7 +213,7 @@ button,
 .set-list a {
 	color: #fff;
 	cursor: pointer;
-	padding: 0.5em 1em;
+	padding: 0.4em 1em;
 	background: -moz-linear-gradient(
 		top,
 		#313c53 0%,
@@ -275,7 +277,22 @@ input[type="date"] {
 }
 
 .index-form input[type="submit"] {
-	margin-top: 0.2em;
+	margin-top: 0.1em;
+	float:right;
+}
+
+.enter-code form {
+	border: 1px solid #000;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2em;
+}
+
+.enter-code input[type="text"] {
+	width: 97%;
+}
+
+.enter-code input[type="submit"] {
 	float:right;
 }
 
@@ -327,7 +344,8 @@ td {
 
 .events,
 .event,
-.songs {
+.songs,
+.enter-code {
 	padding: 4em 0;
 }
 

@@ -14,10 +14,9 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @set_items = @event.set_items
-    user_songs = Song.where(user_id: current_user.id)
-    @songs = user_songs.find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
+    @songs = current_user.songs.find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
     if @songs.empty?
-      @songs = user_songs
+      @songs = current_user.songs
     end
   end
 

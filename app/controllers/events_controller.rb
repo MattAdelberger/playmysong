@@ -6,14 +6,14 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @title = "Events"
-    @events = Event.all
+    @events = Event.where(user_id: current_user.id)
     @event = Event.new
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    @set_items = SetItem.where(event_id: params[:id])
+    @set_items = @event.set_items
     user_songs = Song.where(user_id: current_user.id)
     @songs = user_songs.find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
     if @songs.empty?
@@ -39,6 +39,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
+    @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }

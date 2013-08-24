@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Audience member:</strong>
+  <%= @vote.audience_member %>
+</p>
+
+<p>
+  <strong>Set item:</strong>
+  <%= @vote.set_item %>
+</p>
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>

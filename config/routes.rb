@@ -1,4 +1,6 @@
 Playmysong::Application.routes.draw do
+  resources :votes
+
   resources :audience_members
 
   get '/welcome' => 'welcome#landing'

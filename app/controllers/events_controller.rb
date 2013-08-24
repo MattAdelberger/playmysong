@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, :only => :live_event
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
@@ -22,6 +23,10 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+  end
+
+  def live_event
+    @event = Event.find_by(code: params[:code])
   end
 
   # POST /events

@@ -204,6 +204,50 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
+input[type="date"] {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.index-form {
+	background: #B6C0D2;
+	border-radius: 3px;
+	padding: 3em;
+	border: 1px solid #313C53;
+	
+}
+
+.index-form .field {
+	float:left;
+	width: 40%;
+}
+
+.index-form input[type="text"] {
+	display: block;
+	padding: 0.4em;
+	width: 95%;
+	font-size: 1.8em;
+}
+
+.index-form input[type="date"] {
+	display: block;
+	padding: 0.21em;
+	width: 95%;
+	font-size: 1.8em;
+}
+
+.index-form .actions {
+	float:right;
+	width: 20%;
+}
+
+.index-form input[type="submit"] {
+	margin-top: 0.2em;
+	float:right;
+}
+
+
+
+
 
 
 
@@ -248,35 +292,6 @@ td {
 	padding: 4em 0;
 }
 
-.new-song {
-	background: #B6C0D2;
-	border-radius: 3px;
-	padding: 3em;
-	border: 1px solid #313C53;
-	
-}
-
-.new-song .field {
-	float:left;
-	width: 40%;
-}
-
-.new-song input[type="text"] {
-	display: block;
-	padding: 0.4em;
-	width: 95%;
-	font-size: 1.8em;
-}
-
-.new-song .actions {
-	float:right;
-	width: 20%;
-}
-
-.new-song input[type="submit"] {
-	margin-top: 0.2em;
-	float:right;
-}
 
 
 

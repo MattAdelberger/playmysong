@@ -1,10 +1,11 @@
 class SongsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   # GET /songs
   # GET /songs.json
   def index
-    @songs = Song.all
+    @songs = Song.where(user_id: current_user.id)
   end
 
   # GET /songs/1
@@ -25,6 +26,8 @@ class SongsController < ApplicationController
   # POST /songs.json
   def create
     @song = Song.new(song_params)
+
+    @song.user_id = current_user.id
 
     respond_to do |format|
       if @song.save

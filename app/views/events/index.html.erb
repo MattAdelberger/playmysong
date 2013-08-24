@@ -9,10 +9,10 @@
 <table>
   <thead>
     <tr>
-      <th>Venue</th>
-      <th>Date</th>
-      <th>Event Code</th>
-      <th></th>
+      <th width="25%">Venue</th>
+      <th width="25%">Date</th>
+      <th width="25%">Event Code</th>
+      <th width="25%">Options</th>
     </tr>
   </thead>
 
@@ -22,9 +22,9 @@
         <td><%= event.venue %></td>
         <td><%= event.date %></td>
         <td><%= event.code %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event %>
+        <%= link_to 'Edit', edit_event_path(event) %>
+        <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

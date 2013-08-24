@@ -9,10 +9,11 @@
 <table>
   <thead>
     <tr>
-      <th width="25%">Venue</th>
-      <th width="25%">Date</th>
-      <th width="25%">Event Code</th>
-      <th width="25%">Options</th>
+      <th width="20%">Venue</th>
+      <th width="20%">Date</th>
+      <th width="20%">Event Code</th>
+      <th width="20%"></th>
+      <th width="20%">Options</th>
     </tr>
   </thead>
 
@@ -22,6 +23,7 @@
         <td><%= event.venue %></td>
         <td><%= event.date %></td>
         <td><%= event.code %></td>
+        <td><%= link_to "Live Admin", live_event_admin_path(event) %></td>
         <td><%= link_to 'View', event %>
         <%= link_to 'Edit', edit_event_path(event) %>
         <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

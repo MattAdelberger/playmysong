@@ -1,0 +1,26 @@
+<h1>Admin - <%= @event.venue %></h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th width="25%">Title</th>
+      <th width="25%">Artist</th>
+      <th width="15%">Votes</th>
+      <th width="15%">Play Count</th>
+      <th width="20%"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @set_items.each do |set_song| %>
+      <tr>
+        <td><%= set_song.song.title %></td>
+        <td><%= set_song.song.artist %></td>
+        <td><%= set_song.votes %></td>
+        <td><%= set_song.play_count %></td>
+        <td><%= button_to 'Play Song', play_song_path(set_song) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

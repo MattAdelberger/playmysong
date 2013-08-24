@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130824195700) do
+ActiveRecord::Schema.define(version: 20130824223425) do
 
   create_table "events", force: true do |t|
     t.string   "code"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20130824195700) do
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "play_count"
   end
 
   add_index "set_items", ["event_id"], name: "index_set_items_on_event_id"

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, :only => :live_event
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :live_event_admin]
 
   # GET /events
   # GET /events.json
@@ -31,6 +31,10 @@ class EventsController < ApplicationController
 
   def live_event
     @event = Event.find_by(code: params[:code])
+    @set_items = @event.set_items.order("votes DESC")
+  end
+
+  def live_event_admin
     @set_items = @event.set_items.order("votes DESC")
   end
 

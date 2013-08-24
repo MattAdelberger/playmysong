@@ -1,5 +1,5 @@
 class SetItemsController < ApplicationController
-  before_action :set_set_item, only: [:update]
+  before_action :set_set_item, only: [:update, :play_song]
 
   # GET /set_items
   # GET /set_items.json
@@ -27,9 +27,10 @@ class SetItemsController < ApplicationController
     @set_item = SetItem.new(set_item_params)
 
     @set_item.votes = 0
+    @set_item.play_count = 0
     respond_to do |format|
       if @set_item.save
-        format.html { redirect_to event_path(params[:event_id]) }
+        format.html { redirect_to event_url(params[:event_id]) }
         format.json { render action: 'show', status: :created, location: @set_item }
       else
         format.html { render action: 'new' }
@@ -55,13 +56,20 @@ class SetItemsController < ApplicationController
     # end
   end
 
+  def play_song
+    @set_item.votes = 0
+    @set_item.play_count += 1
+    @set_item.save
+    redirect_to live_event_admin_url(@set_item.event_id)
+  end
+
   # DELETE /set_items/1
   # DELETE /set_items/1.json
   def destroy
     @set_item = SetItem.find(params[:id])
     @set_item.destroy
     respond_to do |format|
-      format.html { redirect_to event_path(@set_item.event_id) }
+      format.html { redirect_to event_url(@set_item.event_id) }
       format.json { head :no_content }
     end
   end

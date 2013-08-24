@@ -244,6 +244,12 @@ input[type="date"] {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+legend {
+	font-size: 2em;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
 .index-form {
 	background: #B6C0D2;
 	border-radius: 3px;
@@ -282,14 +288,17 @@ input[type="date"] {
 }
 
 .enter-code form {
-	border: 1px solid #000;
+	border: 1px solid #313C53;
+	background: #B6C0D2;
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 2em;
+	border-radius: 5px;
 }
 
 .enter-code input[type="text"] {
 	width: 97%;
+	margin-bottom: 1em;
 }
 
 .enter-code input[type="submit"] {
@@ -392,6 +401,25 @@ td {
 	margin-right: 1em;
 }
 
+.enter-code ul{
+	font-size: 1em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    padding: 2em;
+}
+
+.enter-code li{
+    text-align: center;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+
+.enter-code a {
+	padding: 0 0.8em;
+}
+
 
 
 /* ------------------------------------------
@@ -407,6 +435,45 @@ footer {
 }
 
 
+
+
+
+/* ------------------------------------------
+ * Responsive Design
+ * ------------------------------------------ */
+
+@media (max-width: 460px) {
+	
+	.content {
+		padding-top: 0;
+	}
+	
+	header {
+		position: relative;
+	}
+	
+	header a {
+		text-align:center;
+		display: block;
+		width: 100%;
+	}
+	.enter-code form {
+		border: none;
+		background: none;
+	}
+	
+	legend {
+		text-align: center;
+	}
+	
+	.enter-code input {
+		width: 100%;
+	}
+	
+	.enter-code a {
+	padding: 0 1em;
+}
+}
 
 
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Playmysong</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -12,12 +12,8 @@
   
   <%= render :partial => "../partials/header"%>
   
-  
-    <% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign In", new_user_session_path %>
-  <% end %>
+  	<div class="inner">
+    
 
   <% flash.each do |name, msg| %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
@@ -25,8 +21,11 @@
       <%= msg %>
     </div>
   <% end %>
+  
+  
 
   <%= yield %>
+  </div>
 
 </body>
 </html>

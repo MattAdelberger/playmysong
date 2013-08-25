@@ -120,6 +120,16 @@ ul {
 	font-size: 1.6em;
 }
 
+dl {
+	font-size: 1.6em;
+	padding: 0.5em 0;
+}
+
+dt {
+	float:left;
+	width: 40%;
+}
+
 /* ------------------------------------------
  * Header
  * ------------------------------------------ */
@@ -404,8 +414,13 @@ footer {
 
 @media (max-width: 460px) {
 	
-	p, a, table {
+	 a, table {
 		font-size: 1.6em;
+	}
+	
+	p {
+		margin-bottom: 20px;
+		font-size: 3em;
 	}
 	
 	.content {
@@ -414,6 +429,10 @@ footer {
 	
 	h1 {
 		font-size: 2em;
+	}
+	
+	h2 {
+		font-size: 1.6em;
 	}
 
 	header {
@@ -434,7 +453,7 @@ footer {
 		background: none;
 	}
 
-	legend, h1 {
+	legend, h1, h2, p {
 		text-align: center;
 	}
 	
@@ -445,6 +464,11 @@ footer {
 
 	.enter-code a {
 		padding: 0 1em;
+	}
+	
+	.live-vote input[type="submit"] {
+		width: 100%;
+		margin-left: 0.4em;
 	}
 	
 	footer {

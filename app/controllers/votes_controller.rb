@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
   before_action :set_vote, only: [:show, :edit, :update, :destroy]
 
   # GET /votes
@@ -24,14 +25,18 @@ class VotesController < ApplicationController
   # POST /votes
   # POST /votes.json
   def create
-    @vote = Vote.new(vote_params)
+    @vote = Vote.new
+    set_item = SetItem.find_by(id: params[:set_item_id])
+    @vote.set_item_id = params[:set_item_id]
+    @vote.audience_member_id = params[:audience_member_id]
+
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
+        format.html { redirect_to live_event_url(set_item.event.code) }
         format.json { render action: 'show', status: :created, location: @vote }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to live_event_url(set_item.event.code) }
         format.json { render json: @vote.errors, status: :unprocessable_entity }
       end
     end

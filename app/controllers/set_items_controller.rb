@@ -58,7 +58,7 @@ class SetItemsController < ApplicationController
   end
 
   def play_song
-    @set_item.vote_count = 0
+    @set_item.votes.destroy_all
     @set_item.play_count += 1
     @set_item.save
     redirect_to live_event_admin_url(@set_item.event_id)

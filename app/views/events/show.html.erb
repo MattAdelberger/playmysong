@@ -2,14 +2,14 @@
 
 <h1>Manage Set List</h1>
 
-<section class="song-list">
+<section class="song-list group">
 	<h2>Song List</h2>
 	<table>
   <thead>
     <tr>
-     <th width="20%"></th>
-      <th width="40%">Title</th>
-      <th width="40%">Artist</th>
+     <th width="30%"></th>
+      <th width="35%">Title</th>
+      <th width="35%">Artist</th>
     </tr>
   </thead>
 
@@ -31,21 +31,21 @@
 </table>
 </section>
 
-<section class="set-list">
+<section class="set-list group">
 	<h2>Set List</h2>
 	<table>
   <thead>
     <tr>
-      <th width="20%"></th>
-      <th width="40%">Title</th>
-      <th width="40%">Artist</th>
+      <th width="30%"></th>
+      <th width="35%">Title</th>
+      <th width="35%">Artist</th>
     </tr>
   </thead>
 
   <tbody>
     <% @set_items.each do |set_song| %>
       <tr>
-      	<td><%= link_to 'Remove', set_item_path(set_song), method: :delete %></td>
+      	<td><%= button_to 'Remove', set_item_path(set_song), method: :delete %></td>
         <td><%= set_song.song.title %></td>
         <td><%= set_song.song.artist %></td>
       </tr>

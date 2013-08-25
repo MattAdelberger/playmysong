@@ -200,7 +200,7 @@ input {
 	padding: 0.4em;
 }
 
-input[type="submit"], button, .set-list a {
+input[type="submit"], button {
 	color: #ffffff;
 	cursor: pointer;
 	padding: 15px 25px;
@@ -316,10 +316,6 @@ table a {
 	margin-right: 1em;
 }
 
-.set-list table a {
-	font-size: 0.7em;
-}
-
 table a:last-child {
 	margin-right: 0;
 }
@@ -374,6 +370,11 @@ td {
 .song-list, .set-list {
 	width: 50%;
 	float: left;
+	margin-top: 2em;
+}
+
+.set-list input {
+	font-size: 0.7em;
 }
 
 .enter-code ul {

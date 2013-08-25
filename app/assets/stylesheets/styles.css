@@ -276,6 +276,31 @@ legend {
 	float: right;
 }
 
+.devise-form input[type="email"],
+.devise-form input[type="password"],
+.devise-form input[type="text"] {
+	padding: 0.5em;
+	width: 40%;
+	margin-bottom: 1em;
+}
+
+.devise-form input[type="checkbox"] {
+	float: left;
+	margin: 1em 0;
+}
+
+.devise-form a {
+	float:left;
+	padding: 2em 1em 2em 0;
+	font-size: 1.4em;
+}
+
+.devise-form .checkbox label {
+	margin-left: 20px;
+	font-size: 1.6em;
+	line-height: 3.3em;
+}
+
 /* ------------------------------------------
  * Tables
  * ------------------------------------------ */
@@ -313,7 +338,7 @@ td {
  * Sections
  * ------------------------------------------ */
 
-.events, .event, .songs, .enter-code, .live-admin, .live {
+.events, .event, .songs, .enter-code, .live-admin, .live, .devise-form {
 	padding: 4em 0;
 }
 
@@ -391,9 +416,14 @@ td {
 footer {
 	box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.3);
 	text-align: center;
-	padding: 4em 2em 6em 2em;
+	padding: 2em;
 	background: #fff;
 	border-top: 1px solid #B6C0D2;
+}
+
+footer p {
+	font-size: 1.2em;
+	font-style: italic;
 }
 
 /* ------------------------------------------

@@ -5,6 +5,7 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @title = "Song Library"
+    @button_name = "Add Song"
     @songs = current_user.songs.order('artist, title')
     @song = Song.new
   end
@@ -21,6 +22,7 @@ class SongsController < ApplicationController
 
   # GET /songs/1/edit
   def edit
+    @button_name = "Update Song"
   end
 
   # POST /songs

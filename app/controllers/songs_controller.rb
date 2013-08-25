@@ -12,13 +12,13 @@ class SongsController < ApplicationController
 
   # GET /songs/1
   # GET /songs/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /songs/new
-  def new
-    @song = Song.new
-  end
+  # def new
+  #   @song = Song.new
+  # end
 
   # GET /songs/1/edit
   def edit
@@ -70,7 +70,7 @@ class SongsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_song
-      @song = Song.find(params[:id])
+      @song = current_user.songs.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -29,6 +29,7 @@ class VotesController < ApplicationController
     set_item = SetItem.find_by(id: params[:set_item_id])
     @vote.set_item_id = params[:set_item_id]
     @vote.audience_member_id = params[:audience_member_id]
+    @vote.event_id = params[:event_id]
 
 
     respond_to do |format|

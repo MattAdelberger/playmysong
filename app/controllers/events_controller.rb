@@ -32,7 +32,7 @@ class EventsController < ApplicationController
   def live_event
     @event = Event.find_by(code: params[:code])
     @set_items = @event.set_items.order("vote_count DESC")
-    audience_member_vote_count = AudienceMember.find_by(id: session[:audience_member_id]).votes.count
+    audience_member_vote_count = Vote.where("event_id = ? AND audience_member_id = ?", @event.id, session[:audience_member_id]).count
     @remaining_votes = (5 - audience_member_vote_count)
   end
 

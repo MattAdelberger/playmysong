@@ -23,7 +23,7 @@
   <dt>Requests</dt>
     <dd><%= set_song.vote_count %></dd>
 </dl>
-		<p><%= button_to "Request This Song", controller: "votes", action: "create", set_item_id: set_song.id, audience_member_id: session[:audience_member_id] %></p>
+		<p><%= button_to "Request This Song", controller: "votes", action: "create", set_item_id: set_song.id, audience_member_id: session[:audience_member_id], event_id: set_song.event_id %></p>
 		</div>
 	<% end %>
 </section>

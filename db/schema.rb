@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130824234231) do
+ActiveRecord::Schema.define(version: 20130825181639) do
 
   create_table "audience_members", force: true do |t|
     t.string   "email"
@@ -77,9 +77,11 @@ ActiveRecord::Schema.define(version: 20130824234231) do
     t.integer  "set_item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_id"
   end
 
   add_index "votes", ["audience_member_id"], name: "index_votes_on_audience_member_id"
+  add_index "votes", ["event_id"], name: "index_votes_on_event_id"
   add_index "votes", ["set_item_id"], name: "index_votes_on_set_item_id"
 
 end

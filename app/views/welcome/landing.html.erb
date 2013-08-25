@@ -3,7 +3,7 @@
 
 <% if session[:audience_member_id].blank? %>
   <legend>Enter your email</legend>
-  <%= text_field_tag :email %>
+  <%= email_field_tag :email %>
 <% end %>
 
 <legend>Enter event code</legend>

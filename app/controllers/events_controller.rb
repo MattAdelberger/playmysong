@@ -51,7 +51,7 @@ class EventsController < ApplicationController
         format.html { redirect_to events_url, notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
       else
-        format.html { redirect_to events_url, notice: 'Please provide both Venue and Date.' }
+        format.html { redirect_to events_url, notice: "Please provide both Venue and Date and make sure they're unique." }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end

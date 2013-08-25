@@ -1,9 +1,18 @@
+<section class="live">
+
 <h1><%= @event.venue %></h1>
 
-<% @set_items.each do |set_song| %>
-  <ul>
-    <li>
-      <%= button_to "#{set_song.song.title} by #{set_song.song.artist} - votes: #{set_song.vote_count}", controller: "votes", action: "create", set_item_id: set_song.id, audience_member_id: session[:audience_member_id] %>
-    </li>
-  </ul>
-<% end %>
+	<% @set_items.each_with_index do |set_song, index| %>
+	<div class="live-vote group">
+		<dl>
+  <dt>Title:</dt>
+    <dd><%= set_song.song.title %></dd>
+  <dt>Artist:</dt>
+    <dd><%= set_song.song.artist %></dd>
+  <dt>Votes:</dt>
+    <dd><%= set_song.vote_count %></dd>
+</dl>
+		<p><%= button_to "Vote For This Song", controller: "votes", action: "create", set_item_id: set_song.id, audience_member_id: session[:audience_member_id] %></p>
+		</div>
+	<% end %>
+</section>

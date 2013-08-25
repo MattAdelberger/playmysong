@@ -21,7 +21,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.venue %></td>
-        <td><%= event.date %></td>
+        <td><%= event.date.strftime('%a %b %e, %Y') %></td>
         <td><%= event.code %></td>
         <td><%= link_to "Launch Event", live_event_admin_path(event) %>
         <%= link_to 'Manage Set List', event %>

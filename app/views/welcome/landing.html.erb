@@ -1,9 +1,17 @@
 <section class="enter-code group">
-<%= form_tag order_lookup_path, :class => 'group' do %>
-<legend>Enter Event Code</legend>
+<%= form_tag event_lookup_path, :class => 'group' do %>
+
+<% if session[:audience_member_id].blank? %>
+  <legend>Enter your email</legend>
+  <%= text_field_tag :email %>
+<% end %>
+
+<legend>Enter event code</legend>
   <%= text_field_tag :event_code %>
   <%= submit_tag 'Request Songs' %>
 <% end %>
+
+<h1><%= session[:audience_member_id] %></h1>
 
 <ul>
 <li><%= link_to "Log In", new_user_session_path %> <a href="/users/sign_up">Sign Up</a></li>

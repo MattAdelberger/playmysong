@@ -2,6 +2,9 @@
 
 <h1><%= @event.venue %></h1>
 
+<h3><%= @audience_member_vote_count %></h3>
+
+
 	<% @set_items.each_with_index do |set_song, index| %>
 	<div class="live-vote group">
 		<dl>
@@ -16,3 +19,5 @@
 		</div>
 	<% end %>
 </section>
+
+

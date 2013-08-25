@@ -27,7 +27,7 @@ class SetItemsController < ApplicationController
   def create
     @set_item = SetItem.new(set_item_params)
 
-    @set_item.votes = 0
+    @set_item.vote_count = 0
     @set_item.play_count = 0
     respond_to do |format|
       if @set_item.save
@@ -43,7 +43,7 @@ class SetItemsController < ApplicationController
   # PATCH/PUT /set_items/1
   # PATCH/PUT /set_items/1.json
   def update
-    @set_item.votes = @set_item.votes + 1
+    @set_item.vote_count += 1
     @set_item.save
     redirect_to live_event_path(@set_item.event.code)
     # respond_to do |format|
@@ -58,7 +58,7 @@ class SetItemsController < ApplicationController
   end
 
   def play_song
-    @set_item.votes = 0
+    @set_item.vote_count = 0
     @set_item.play_count += 1
     @set_item.save
     redirect_to live_event_admin_url(@set_item.event_id)

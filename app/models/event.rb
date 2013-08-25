@@ -7,4 +7,5 @@ class Event < ActiveRecord::Base
 
   validates :venue, :date, presence: true
   validates :code, uniqueness: true
+  validates :venue, uniqueness: { scope: :date, case_sensitive: false }
 end

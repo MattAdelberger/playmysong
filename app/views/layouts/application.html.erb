@@ -9,16 +9,19 @@
 	</head>
 	<body>
 
+
+		<% flash.each do |name, msg| %>
+					<div class="alert group alert-<%= name == :notice ? "success" : "error" %>">
+						<a class="close" data-dismiss="alert">&times;</a>
+						<p><%= msg %></p>
+					</div>
+				<% end %>
+
 		<%= render :partial => "../partials/header"%>
 
 		<div class="content">
 			<div class="inner">
-				<% flash.each do |name, msg| %>
-					<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-						<a class="close" data-dismiss="alert">&times;</a>
-						<%= msg %>
-					</div>
-				<% end %>
+			
 			<%= yield %>
 			</div>
 		</div>

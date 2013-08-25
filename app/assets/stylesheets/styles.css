@@ -6,7 +6,9 @@
  * 	05. Form Elements
  * 	06. Tables
  * 	07. Sections
- * 	08. Footer
+ * 	08.	Alerts
+ * 	09. Footer
+ * 	10. Responsive Design
  ************************************/
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -126,7 +128,7 @@ dl {
 }
 
 dt {
-	float:left;
+	float: left;
 	width: 40%;
 }
 
@@ -247,38 +249,18 @@ legend {
 	padding: 0.7em 0.5em;
 	width: 90%;
 	font-size: 1.8em;
-	margin:0;
+	margin: 0;
 }
 
 .index-form input[type="date"] {
 	display: block;
 	padding: 0.56em 0.5em;
-	margin:0;
+	margin: 0;
 	width: 90%;
 	font-size: 1.8em;
 }
 
-.enter-code form {
-	border: 1px solid #313C53;
-	background: #B6C0D2;
-	max-width: 600px;
-	margin: 0 auto;
-	padding: 2em;
-	border-radius: 5px;
-}
-
-.enter-code input[type="text"] {
-	width: 97%;
-	margin-bottom: 1em;
-}
-
-.enter-code input[type="submit"] {
-	float: right;
-}
-
-.devise-form input[type="email"],
-.devise-form input[type="password"],
-.devise-form input[type="text"] {
+.devise-form input[type="email"], .devise-form input[type="password"], .devise-form input[type="text"], .devise-form input[type="date"] {
 	padding: 0.5em;
 	width: 40%;
 	margin-bottom: 1em;
@@ -290,7 +272,7 @@ legend {
 }
 
 .devise-form a {
-	float:left;
+	float: left;
 	padding: 2em 1em 2em 0;
 	font-size: 1.4em;
 }
@@ -377,25 +359,6 @@ td {
 	font-size: 0.7em;
 }
 
-.enter-code ul {
-	font-size: 1em;
-	display: -webkit-box;
-	display: -moz-box;
-	display: box;
-	padding: 2em;
-}
-
-.enter-code li {
-	text-align: center;
-	-webkit-box-flex: 1;
-	-moz-box-flex: 1;
-	box-flex: 1;
-}
-
-.enter-code a {
-	padding: 0 0.8em;
-}
-
 .live-vote {
 	padding: 2em;
 	border-top: 1px solid #ddd;
@@ -409,6 +372,28 @@ td {
 
 
 
+/* ------------------------------------------
+ * Alerts
+ * ------------------------------------------ */
+.alert {
+    color:#666;
+    background: #fff;
+    padding: 2em;
+    text-align: center;
+}
+
+.alert p {
+	font-size: 1.4em;
+	text-transform: UPPERCASE;
+}
+
+.alert .close {
+	float:right;
+}
+
+.dp-none {
+	display: none;
+}
 
 /* ------------------------------------------
  * Footer
@@ -444,24 +429,24 @@ footer p {
 }
 
 @media (max-width: 460px) {
-	
-	 a, table {
+
+	a, table {
 		font-size: 1.6em;
 	}
-	
+
 	p {
 		margin-bottom: 20px;
 		font-size: 3em;
 	}
-	
+
 	.content {
 		padding-top: 0;
 	}
-	
+
 	h1 {
 		font-size: 2em;
 	}
-	
+
 	h2 {
 		font-size: 1.6em;
 	}
@@ -479,31 +464,37 @@ footer p {
 		display: block;
 		width: 100%;
 	}
-	.enter-code form {
-		border: none;
-		background: none;
-	}
 
 	legend, h1, h2, p {
 		text-align: center;
 	}
-	
 
-	.enter-code input {
+	.devise-form input {
 		width: 100%;
 	}
 
-	.enter-code a {
-		padding: 0 1em;
-	}
-	
-	.live-vote input[type="submit"] {
+	.devise-form a {
+		display: block;
 		width: 100%;
-		margin-left: 0.4em;
+		text-align: center;
+		padding: 3em 0 0;
 	}
-	
-	footer {
-		display: none;
-	}
+
+.devise-form input[type="checkbox"] {
+	width: 5%;
+}
+
+.devise-form input[type="email"], .devise-form input[type="password"], .devise-form input[type="text"] {
+	width: 93%;
+}
+
+.live-vote input[type="submit"] {
+	width: 100%;
+	margin-left: 0.4em;
+}
+
+footer {
+	display: none;
+}
 }
 

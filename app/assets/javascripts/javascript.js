@@ -1,18 +1,7 @@
-//$(function() {
-//	initPage();
-//});
-//$(window).bind('page:change', function() {
-//	initPage();
-//})
+$(document).ready(function(){
+	$('.close').click(function() {
+		$('.alert').addClass('dp-none');
+	})
+});
 
-//function ReloadPage() {
-
-//	location.reload();
-
-//};
-
-//$(document).ready(function() {
-
-//	setTimeout("ReloadPage()", 10000);
-//});
 

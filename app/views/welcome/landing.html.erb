@@ -1,17 +1,17 @@
-<section class="enter-code group">
+<section class="devise-form group">
+	<h1>Request Songs Now</h1>
 <%= form_tag event_lookup_path, :class => 'group' do %>
 
 <% if session[:audience_member_id].blank? %>
-  <legend>Enter your email</legend>
-  <%= email_field_tag :email %>
+  <%= email_field_tag :email, nil, :placeholder => 'Email Address' %>
 <% end %>
 
-<legend>Enter event code</legend>
-  <%= text_field_tag :event_code %>
+  <%= text_field_tag :event_code, nil, :placeholder => 'Event Code' %>
   <%= submit_tag 'Start Requesting Now' %>
 <% end %>
 
-<ul>
-<li><%= link_to "Log In", new_user_session_path %> <a href="/users/sign_up">Sign Up</a></li>
-</ul>
+
+<%= link_to "Log In", new_user_session_path %> 
+	<a href="/users/sign_up">Sign Up</a>
+
 </section>

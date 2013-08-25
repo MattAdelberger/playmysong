@@ -32,10 +32,10 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to songs_path, notice: 'Song was successfully created.' }
+        format.html { redirect_to songs_url, notice: 'Song was successfully created.' }
         format.json { render action: 'show', status: :created, location: @song }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to songs_url, notice: 'Please provide both Title and Artist.' }
         format.json { render json: @song.errors, status: :unprocessable_entity }
       end
     end
@@ -46,7 +46,7 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
+        format.html { redirect_to songs_url, notice: 'Song was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

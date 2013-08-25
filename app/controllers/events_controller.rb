@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @title = "Events"
-    @events = Event.where(user_id: current_user.id)
+    @events = Event.where(user_id: current_user.id).order('date')
     @event = Event.new
   end
 
@@ -14,9 +14,9 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @set_items = @event.set_items
-    @songs = current_user.songs.find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
+    @songs = current_user.songs.order('artist, title').find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
     if @set_items.empty?
-      @songs = current_user.songs
+      @songs = current_user.songs.order('artist, title')
     end
   end
 

@@ -5,7 +5,7 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @title = "Song Library"
-    @songs = current_user.songs
+    @songs = current_user.songs.order('artist, title')
     @song = Song.new
   end
 

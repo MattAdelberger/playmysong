@@ -3,17 +3,17 @@
 <h1>Events</h1>
 
 <section class="index-form group">
+	<legend>New Event</legend>
 <%= render 'form' %>
 </section>
 
 <table>
   <thead>
     <tr>
-      <th width="20%">Venue</th>
-      <th width="20%">Date</th>
-      <th width="20%">Event Code</th>
-      <th width="20%"></th>
-      <th width="20%">Options</th>
+      <th width="30%">Venue</th>
+      <th width="15%">Date</th>
+      <th width="15%">Event Code</th>
+      <th width="40%">Options</th>
     </tr>
   </thead>
 
@@ -23,8 +23,8 @@
         <td><%= event.venue %></td>
         <td><%= event.date %></td>
         <td><%= event.code %></td>
-        <td><%= link_to "Live Admin", live_event_admin_path(event) %></td>
-        <td><%= link_to 'View', event %>
+        <td><%= link_to "Launch Event", live_event_admin_path(event) %>
+        <%= link_to 'Manage Set List', event %>
         <%= link_to 'Edit', edit_event_path(event) %>
         <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

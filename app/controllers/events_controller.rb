@@ -31,11 +31,11 @@ class EventsController < ApplicationController
 
   def live_event
     @event = Event.find_by(code: params[:code])
-    @set_items = @event.set_items.order("votes DESC")
+    @set_items = @event.set_items.order("vote_count DESC")
   end
 
   def live_event_admin
-    @set_items = @event.set_items.order("votes DESC")
+    @set_items = @event.set_items.order("vote_count DESC")
   end
 
   # POST /events

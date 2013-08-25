@@ -21,9 +21,9 @@ class EventsController < ApplicationController
   end
 
   # GET /events/new
-  def new
-    @event = Event.new
-  end
+  # def new
+  #   @event = Event.new
+  # end
 
   # GET /events/1/edit
   def edit
@@ -84,7 +84,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = current_user.events.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

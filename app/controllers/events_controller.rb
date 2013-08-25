@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   def show
     @set_items = @event.set_items
     @songs = current_user.songs.find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
-    if @songs.empty?
+    if @set_items.empty?
       @songs = current_user.songs
     end
   end

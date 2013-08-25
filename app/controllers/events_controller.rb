@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @title = "Events"
-    @events = Event.where(user_id: current_user.id)
+    @events = Event.where(user_id: current_user.id).order('date')
     @event = Event.new
   end
 
@@ -14,9 +14,9 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @set_items = @event.set_items
-    @songs = current_user.songs.find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
+    @songs = current_user.songs.order('artist, title').find(:all, conditions: ['id not in (?)', @set_items.map(&:song_id)])
     if @set_items.empty?
-      @songs = current_user.songs
+      @songs = current_user.songs.order('artist, title')
     end
   end
 
@@ -48,10 +48,10 @@ class EventsController < ApplicationController
     @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
-        format.html { redirect_to events_path, notice: 'Event was successfully created.' }
+        format.html { redirect_to events_url, notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to events_url, notice: 'Please provide both Venue and Date.' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to events_path, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

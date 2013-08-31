@@ -2,6 +2,8 @@ Playmysong::Application.routes.draw do
   resources :votes
 
   resources :audience_members
+    
+  get '/home' => 'public#index'
 
   get '/welcome' => 'welcome#landing'
   post '/welcome' => 'welcome#event_lookup', :as => 'event_lookup'
@@ -14,7 +16,7 @@ Playmysong::Application.routes.draw do
   devise_for :users
   resources :songs
 
-  root 'welcome#landing'
+  root 'public#index'
 
   get ':code' => 'events#live_event', :as => 'live_event'
 

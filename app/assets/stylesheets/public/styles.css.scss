@@ -1,0 +1,118 @@
+/*************************************
+ * 	01. CSS Reset
+ * 	02. Base Styles
+ * 	03. Header
+ * 	04. Utility Classes
+ *  05. Sections
+ ************************************/
+
+body {
+    background: #FFF URL('witewall_3.png') 50% 50%;
+    background-position: fixed;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 62.5%;
+}
+
+h1 {
+    font-size: 6em;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.6em;
+}
+
+
+
+
+
+
+/* ------------------------------------------
+ * Utility Classes
+ * ------------------------------------------ */
+
+.inner {
+	max-width: 1140px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.right, .left {
+	display: inline;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+
+
+
+/* ------------------------------------------
+ * Header
+ * ------------------------------------------ */
+
+header {
+    line-height: 1.6;
+    padding: 1em 0;
+}
+
+header h1{
+    font-size: 3em;
+    text-shadow: 0 1px 1px #CCC; 
+    margin-left: 0.5em;
+}
+
+nav a {
+    padding: 0 1em;    
+}
+
+
+
+
+
+
+/* ------------------------------------------
+ * Sections
+ * ------------------------------------------ */
+
+
+.hero {
+    padding: 6em 0;    
+}
+
+.hero-text {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 4em 4em 0 0;
+}
+
+.hero-text h1 {
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
